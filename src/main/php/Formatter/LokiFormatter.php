@@ -15,16 +15,16 @@ use Monolog\Formatter\NormalizerFormatter;
 class LokiFormatter extends NormalizerFormatter
 {
     /** a prefix for 'extra' fields from the Monolog record (optional) */
-    protected string $extraPrefix = '';
+    protected $extraPrefix = '';
 
     /** a prefix for 'context' fields from the Monolog record (optional) */
-    protected string $contextPrefix = '';
+    protected $contextPrefix = '';
 
     /** labels that will be used for all messages (optional) */
-    protected array $labels = [];
+    protected $labels = [];
 
     /** Base context to be used for all messages (optional) */
-    protected array $context = [];
+    protected $context = [];
 
     public function __construct(
         array $labels = [],
@@ -133,7 +133,9 @@ class LokiFormatter extends NormalizerFormatter
 
         return array_filter(
             $record,
-            fn($key): bool => in_array($key, $keepAsLabels, true),
+            function ($key) use ($keepAsLabels): bool {
+                return in_array($key, $keepAsLabels, true);
+            },
             ARRAY_FILTER_USE_KEY
         );
     }

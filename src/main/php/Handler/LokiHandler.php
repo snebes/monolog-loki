@@ -19,25 +19,25 @@ use Monolog\Logger;
 class LokiHandler extends AbstractProcessingHandler
 {
     /** the scheme, hostname and port to the Loki system */
-    protected ?string $entrypoint;
+    protected $entrypoint;
 
     /** the identifiers for Basic Authentication to the Loki system */
-    protected array $basicAuth = [];
+    protected $basicAuth = [];
 
     /** the name of the system (hostname) sending log messages to Loki */
-    protected ?string $systemName;
+    protected $systemName;
 
     /** the list of default context variables to be sent to the Loki system */
-    protected array $globalContext = [];
+    protected $globalContext = [];
 
     /** the list of default labels to be sent to the Loki system */
-    protected array $globalLabels = [];
+    protected $globalLabels = [];
 
     /** custom curl options */
-    protected array $customCurlOptions = [];
+    protected $customCurlOptions = [];
 
     /** curl options which cannot be customized */
-    protected array $nonCustomizableCurlOptions = [
+    protected $nonCustomizableCurlOptions = [
         CURLOPT_CUSTOMREQUEST,
         CURLOPT_RETURNTRANSFER,
         CURLOPT_POSTFIELDS,

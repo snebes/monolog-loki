@@ -15,7 +15,7 @@
     "issues": "https://github.com/itspire/monolog-loki/issues"
   },
   "require": {
-    "php": ">=7.4",
+    "php": ">=7.3",
     "monolog/monolog": "~1.25|~2.0"
   },
   "require-dev": {
@@ -26,7 +26,8 @@
     "roave/security-advisories": "dev-master",
     "sebastian/phpcpd": "~5.0",
     "squizlabs/php_codesniffer": "~3.5",
-    "symfony/phpunit-bridge": "~5.1"
+    "symfony/phpunit-bridge": "~5.1",
+    "phpunit/phpunit": "^9.1"
   },
   "autoload": {
     "psr-4": {
